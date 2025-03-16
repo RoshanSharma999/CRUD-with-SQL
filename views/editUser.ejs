@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDIT USER</title>
+    <style>
+        * {
+            margin: 10px;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit User</h1>
+    <h2>Id: <%= user.id %>
+    </h2>
+    <form method="POST" action="/users/<%= user.id %>?_method=PATCH">
+        <label>Username:</label>
+        <input type="text" name="username" value="<%= user.username %>" required autocomplete="off">
+        <br>
+        <label>Email:</label>
+        <input type="text" name="email" value="<%= user.email %>" required autocomplete="off">
+        <br>
+        <label>Password</label>
+        <input type="text" name="password" required autocomplete="off">
+        <br>
+        <button>Update</button>
+    </form>
+</body>
+
+</html>

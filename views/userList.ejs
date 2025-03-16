@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USERS</title>
+    <style>
+        *{
+            color: white;
+            background-color: black;
+        }
+        table{
+            border-collapse: collapse;
+            margin: 10px;
+        }
+        th, td{
+            margin: 0;
+            padding: 5px;
+            border: 1px solid white;
+        }
+        h2{
+            margin: 10px 0px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>User list</h1>
+    <div>Back to <h2><a href="http://localhost:8080">Home</a></h2> Page</div>
+    <table>
+        <tr>
+            <th>SI NO</th>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Edit Option</th>
+            <th>Delete User</th>
+        </tr>
+        <% for(let i = 0; i < data.length; i++) { %>
+            <tr>
+                <td><%= i+1 %></td>
+                <td><%= data[i].id %></td>
+                <td><%= data[i].username %></td>
+                <td><%= data[i].email %></td>
+                <td><form method="GET" action="/users/<%= data[i].id %>/edit"><button>Edit</button></form></td>
+                <td><form method="POST" action="/users/<%= data[i].id %>?_method=DELETE"><button>Delete</button></form></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

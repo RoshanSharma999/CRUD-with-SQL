@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEW USER</title>
+    <style>
+        *{
+            margin: 10px 5px;
+            color: white;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Enter user details</h2>
+    <form method="POST" action="/users">
+        <label>Id</label>
+        <input name="id" type="text" required autocomplete="off"><br>
+        <label>Username</label>
+        <input name="username" type="text" required autocomplete="off"><br>
+        <label>Email</label>
+        <input name="email" type="text" required autocomplete="off"><br>
+        <label>Password</label>
+        <input name="password" type="password" required autocomplete="off"><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
